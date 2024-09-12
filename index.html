@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akun Pääkallosaari</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 1rem;
+            background-color: #007bff;
+            color: white;
+            margin: 0;
+        }
+
+        .table-container {
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .show-button {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .show-button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 50px;
+            height: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        .loading {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Akun Pääkallosaari ;)</h2>
+
+    <div id="tablesContainer">
+        <!-- Publications 1 to 5 -->
+        <div class="table-container">
+            <button class="show-button" onclick="toggleTable('table1')">Show Publication 1</button>
+            <div id="table1Container" class="hidden">
+                <p>Updated at: <span id="update1"></span></p>
+                <p>Total count: <span id="count1"></span></p>
+                <p id="loading1" class="loading hidden">Loading...</p>
+                <table id="table1">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Display Name</th>
+                            <th>Image</th>
+                            <th>Rating</th>
+                            <th>Page Count</th>
+                            <th>Comment Count</th>
+                            <th>Publication Date</th>
+                            <th>Story Count</th>
+                            <th>Description</th>
+                            <th>Publication ID</th>
+                            <th>ID</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Similar blocks for publications 2 to 5 -->
+        <div class="table-container">
+            <button class="show-button" onclick="toggleTable('table2')">Show Publication 2</button>
+            <div id="table2Container" class="hidden">
+                <p>Updated at: <span id="update2"></span></p>
+                <p>Total count: <span id="count2"></span></p>
+                <p id="loading2" class="loading hidden">Loading...</p>
+                <table id="table2">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Display Name</th>
+                            <th>Image</th>
+                            <th>Rating</th>
+                            <th>Page Count</th>
+                            <th>Comment Count</th>
+                            <th>Publication Date</th>
+                            <th>Story Count</th>
+                            <th>Description</th>
+                            <th>Publication ID</th>
+                            <th>ID</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+         <div class="table-container">
+            <button class="show-button" onclick="toggleTable('table3')">Show Publication 3</button>
+            <div id="table3Container" class="hidden">
+                <p>Updated at: <span id="update3"></span></p>
+                <p>Total count: <span id="count3"></span></p>
+                <p id="loading3" class="loading hidden">Loading...</p>
+                <table id="table3">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Display Name</th>
+                            <th>Image</th>
+                            <th>Rating</th>
+                            <th>Page Count</th>
+                            <th>Comment Count</th>
+                            <th>Publication Date</th>
+                            <th>Story Count</th>
+                            <th>Description</th>
+                            <th>Publication ID</th>
+                            <th>ID</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+       <div class="table-container">
+            <button class="show-button" onclick="toggleTable('table4')">Show Publication 4</button>
+            <div id="table4Container" class="hidden">
+                <p>Updated at: <span id="update4"></span></p>
+                <p>Total count: <span id="count4"></span></p>
+                <p id="loading4" class="loading hidden">Loading...</p>
+                <table id="table4">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Display Name</th>
+                            <th>Image</th>
+                            <th>Rating</th>
+                            <th>Page Count</th>
+                            <th>Comment Count</th>
+                            <th>Publication Date</th>
+                            <th>Story Count</th>
+                            <th>Description</th>
+                            <th>Publication ID</th>
+                            <th>ID</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+<div class="table-container">
+            <button class="show-button" onclick="toggleTable('table5')">Show Publication 5</button>
+            <div id="table5Container" class="hidden">
+                <p>Updated at: <span id="update5"></span></p>
+                <p>Total count: <span id="count5"></span></p>
+                <p id="loading5" class="loading hidden">Loading...</p>
+                <table id="table5">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Display Name</th>
+                            <th>Image</th>
+                            <th>Rating</th>
+                            <th>Page Count</th>
+                            <th>Comment Count</th>
+                            <th>Publication Date</th>
+                            <th>Story Count</th>
+                            <th>Description</th>
+                            <th>Publication ID</th>
+                            <th>ID</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Add blocks for publication 3, 4, 5 similarly -->
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        const apiUrls = [
+            'https://api.akuankka.fi/api/v2/issues?publication=1&limit=150&offset=0&order=-published_start',
+            'https://api.akuankka.fi/api/v2/issues?publication=2&limit=150&offset=0&order=-published_start',
+            'https://api.akuankka.fi/api/v2/issues?publication=3&limit=150&offset=0&order=-published_start',
+            'https://api.akuankka.fi/api/v2/issues?publication=4&limit=150&offset=0&order=-published_start',
+            'https://api.akuankka.fi/api/v2/issues?publication=5&limit=150&offset=0&order=-published_start'
+        ];
+
+        function showLoading(tableId) {
+            $(`#loading${tableId.slice(-1)}`).removeClass('hidden');
+        }
+
+        function hideLoading(tableId) {
+            $(`#loading${tableId.slice(-1)}`).addClass('hidden');
+        }
+
+        function showError(message) {
+            alert(message);
+        }
+
+        async function fetchIssues(apiUrl) {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                const data = await response.json();
+                return {
+                    updated_at: data.updated_at,
+                    total_count: data.total_count,
+                    items: data.items.map(item => ({
+                        title: item.title || 'N/A',
+                        display_name: item.display_name || 'N/A',
+                        imageUrl: item.images?.listing?.url || '',
+                        average_rating: item.average_rating !== undefined ? item.average_rating.toFixed(1) : 'N/A',
+                        page_count: item.page_count || 'N/A',
+                        comment_count: item.comment_count || 'N/A',
+                        publication_date: item.publication_date || 'N/A',
+                        story_count: item.story_count || 'N/A',
+                        description: item.text || 'N/A',
+                        publication_id: item.publication_id || 'N/A',
+                        id: item.id || 'N/A'
+                    }))
+                };
+            } catch (error) {
+                console.error('Error fetching issues:', error);
+                showError('An error occurred while fetching publication data.');
+                return {
+                    updated_at: '',
+                    total_count: 0,
+                    items: []
+                };
+            }
+        }
+
+        function populateTable(issuesData, tableId) {
+            const tableBody = $(`#${tableId} tbody`);
+            tableBody.empty();
+
+            issuesData.items.forEach(issue => {
+                const row = `
+                    <tr>
+                        <td>${issue.title}</td>
+                        <td>${issue.display_name}</td>
+                        <td>${issue.imageUrl ? `<img src="${issue.imageUrl}" alt="${issue.title}">` : 'No Image'}</td>
+                        <td>${issue.average_rating}</td>
+                        <td>${issue.page_count}</td>
+                        <td>${issue.comment_count}</td>
+                        <td>${issue.publication_date}</td>
+                        <td>${issue.story_count}</td>
+                        <td>${issue.description}</td>
+                        <td>${issue.publication_id}</td>
+                        <td>${issue.id}</td>
+                    </tr>
+                `;
+                tableBody.append(row);
+            });
+
+            // Update metadata
+            $(`#update${tableId.slice(-1)}`).text(issuesData.updated_at);
+            $(`#count${tableId.slice(-1)}`).text(issuesData.total_count);
+        }
+
+        function toggleTable(tableId) {
+            const container = $(`#${tableId}Container`);
+            container.toggleClass('hidden');
+        }
+
+        $(document).ready(async function() {
+            for (let i = 0; i < apiUrls.length; i++) {
+                showLoading(`table${i+1}`);
+                const issuesData = await fetchIssues(apiUrls[i]);
+                populateTable(issuesData, `table${i+1}`);
+                hideLoading(`table${i+1}`);
+            }
+        });
+    </script>
+
+</body>
+</html>
+
